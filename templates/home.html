@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Weather API</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <p>
+    <p>
+    <h1>Weather API</h1>
+    <p>
+    <p>This API provides weather data.</p>
+    <p>Specify <mark class="bg-success text-white">location</mark> and <mark class="bg-success text-white">date</mark>
+      and the API will return <mark class="bg-info text-white">humidity</mark>, <mark
+        class="bg-info text-white">temperature</mark>, <mark class="bg-info text-white">wind speed</mark>, and <mark
+        class="bg-info text-white">wind direction</mark>.</p>
+    <p>
+    <p>The API works through GET requests to:</p>
+    <code>http://myapi.com/</code>
+    <p>
+    <p>It will access a weather database (sample data at this stage), and return a JSON response with the data requested. It will also include the units used to record each
+      parameter.</p>
+    <p>
+    <p>
+    <h2>Example Calls</h2>
+    <p>
+    <h4>All Parameters</h4>
+    <p>To see all four parameters, simply specify location and date.</p>
+    <p>For example, to see weather for Cardiff on 23rd April:</p>
+    <code>http://myapi.com/get-weather?location=Cardiff&date=2023-04-23</code>
+    <p>
+    <h5>Response</h5>
+    <p>
+      <code>[
+      {
+        "date": "2023-04-23",
+        "humidity": 60.0,
+        "location": "Cardiff",
+        "temperature": 20.0,
+        "wind_direction": null,
+        "wind_speed": 10.5
+      },
+      {
+        "units": {
+          "humidity": "percentage",
+          "temperature": "celsius",
+          "wind_direction": "degrees",
+          "wind_speed": "miles per hour"
+        }
+      }
+    ]</code>
+    <h4>Specified Parameters</h4>
+    <p>Parameters can be specified, they just need to be included in the request.</p>
+    <p>They are:</p>
+    <ul>
+      <li><code>temperature</code></li>
+      <li><code>humidity</code></li>
+      <li><code>wind_speed</code></li>
+      <li><code>wind_direction</code></li>
+    </ul>
+    <p>For example, to see only temperature and wind speed for Cardiff on 23rd April:</p>
+    <code>http://myapi.com/get-weather?location=Cardiff&date=2023-04-23&par&#97;meters=humidity,wind_speed</code>
+    <p>
+    <h5>Response</h5>
+    <p>
+      <code>[
+        {
+          "date": "2023-04-23",
+          "humidity": 60.0,
+          "location": "Cardiff",
+          "wind_speed": 10.5
+        },
+        {
+          "units": {
+            "humidity": "percentage",
+            "wind_speed": "miles per hour"
+          }
+        }
+      ]</code>
+    <p>
+  </div>
+</body>
+
+</html>
